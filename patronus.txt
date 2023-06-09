@@ -1,17 +1,158 @@
-LILY'S PATRONUS
-SNAPE'S PATRONUS
-                   .     _,
-                   |`\__/ /
-                   \  . .(
-                    | __T|
-                   /   |
-      _.---======='    |
-     //               {}
-    `|      ,   ,     {}
-     \      /___;    ,'
-      ) ,-;`    `\  //
-     | / (        ;||
-     ||`\\        |||
-     ||  \\       |||
-     )\   )\      )||
-     `"   `"      `""
+1ST QUESTION
+——————————————————————
+
+function notMyFunction(array) {
+  if (array.length % 2 !== 0) {
+    console.error('Error: Array length is not even.');
+    return;
+  }
+
+  const halfLength = array.length / 2;
+  const firstHalf = array.slice(0, halfLength);
+  const secondHalf = array.slice(halfLength);
+
+  const swappedArray = [...secondHalf, ...firstHalf];
+  return swappedArray;
+}
+
+//console.log(notMyFunction([1, 2, 3, 4, 5, 6]));
+console.log(notMyFunction([1, 2, 3, 4, 5, 6, 7]));
+
+——————————————————————
+
+2ND QUESTION
+
+function calculator(n1, n2, operation) {
+  let result;
+
+  switch (operation) {
+    case '+':
+      result = n1 + n2;
+      console.log(`Addition of ${n1} + ${n2} = ${result}`);
+      break;
+    case '-':
+      result = n1 - n2;
+      console.log(`Subtraction of ${n1} - ${n2} = ${result}`);
+      break;
+    case '*':
+      result = n1 * n2;
+      console.log(`Multiplication of ${n1} * ${n2} = ${result}`);
+      break;
+    case '/':
+      result = n1 / n2;
+      console.log(`Division of ${n1} / ${n2} = ${result}`);
+      break;
+    default:
+      console.log('Invalid operation');
+  }
+}
+
+calculator(1, 2, '+');
+calculator(5, 4, '-');
+calculator(3, 4, '*');
+calculator(10, 2, '/');
+calculator(7, 3, '^');
+
+——————————————————————
+
+3RD QUESTION
+
+function findMaxDifference(array) {
+  if (array.length < 2) {
+    console.log('Array must have at least two elements.');
+    return;
+  }
+
+  let maxDifference = Math.abs(array[1] - array[0]);
+
+  for (let i = 1; i < array.length - 1; i++) {
+    const difference = Math.abs(array[i + 1] - array[i]);
+    if (difference > maxDifference) {
+      maxDifference = difference;
+    }
+  }
+
+  console.log('Maximum difference:', maxDifference);
+}
+
+findMaxDifference([1, 2, 3, 9, 10]);
+
+——————————————————————
+
+4TH QUESTION
+
+function notMyFunction(obj) {
+  const keys = Object.keys(obj);
+  const values = Object.values(obj);
+  const keyLength = keys.length;
+
+  console.log('Keys:', keys.join(', '));
+  console.log('Values:', values.join(', '));
+  console.log('Length:', keyLength);
+}
+
+
+var student = {
+  name: "John",
+  rollno: 10
+};
+
+notMyFunction(student);
+
+——————————————————————
+
+5TH QUESTION
+
+function checkVotingEligibility() {
+  const age = prompt("Please enter your age:");
+
+  if (age >= 18) {
+    console.log("Congratulations! You are eligible for voting.");
+  } else {
+    console.log("Sorry, you are not eligible for voting yet.");
+  }
+}
+checkVotingEligibility();
+
+——————————————————————
+
+6TH QUESTION
+
+function greet(name, callback) {
+  console.log("Hello, " + name + "!");
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("John", sayGoodbye);
+
+——————————————————————
+
+7TH QUESTION
+
+function checkSameElements(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    console.log("NotSame");
+    return;
+  }
+
+  const sortedArr1 = arr1.sort();
+  const sortedArr2 = arr2.sort();
+
+  for (let i = 0; i < sortedArr1.length; i++) {
+    if (sortedArr1[i] !== sortedArr2[i]) {
+      console.log("NotSame");
+      return;
+    }
+  }
+
+  console.log("Same");
+}
+
+checkSameElements([1, 2, 3, 4, 5], [5, 4, 1, 2, 3]); 
+checkSameElements([1, 2, 3, 4, 5], [5, 4, 1, 2, 6]); 
+checkSameElements([1, 2, 3], [3, 2, 1]); 
+checkSameElements([1, 2, 3], [3, 2, 1, 4]); 
